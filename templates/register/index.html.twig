@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Register{% endblock %}
+
+{% block content %}
+<h1 class="mt-5 pt-5">Register</h1>
+
+{% if notification %}
+<div class="alert alert-info">
+    {{ notification }}
+</div>
+{% endif %}
+
+    {{form(form)}}
+{% endblock %}
