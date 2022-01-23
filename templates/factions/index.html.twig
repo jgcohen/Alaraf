@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello FactionController!{% endblock %}
+
+{% block content %}
+<div class="row">
+{% for faction in factions %}
+						<div class="col-md-4 pt-5">
+						<a href="{{path('faction',{'id':faction.id})}}">{{faction.name}}</a>
+						</div>
+					{% endfor %}
+                    </div>
+{% endblock %}
+

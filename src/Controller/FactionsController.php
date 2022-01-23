@@ -2,25 +2,31 @@
 
 namespace App\Controller;
 
-use App\Entity\Npc;
+use App\Entity\Faction;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Doctrine\ORM\EntityManagerInterface;
 
-class NpcController extends AbstractController
+
+class FactionsController extends AbstractController
 {
+
+    private $entityManager;
+
     public function __construct (EntityManagerInterface $entityManager){
         $this->entityManager = $entityManager;
     }
     /**
-     * @Route("/npc/{id}", name="npc")
+     * @Route("/factions", name="factions")
      */
-    public function index($id): Response
+    public function index(): Response
     {
-        $npc = $this->entityManager->getRepository(Npc::class)->find($id);
-        return $this->render('npc/index.html.twig', [
-            'npc'=>$npc
+
+        $factions = $this->entityManager->getRepository(Faction::class)->findAll();
+        
+        return $this->render('factions/index.html.twig', [
+            'factions' => $factions,
         ]);
     }
 }

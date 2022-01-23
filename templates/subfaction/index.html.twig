@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello SubfactionController!{% endblock %}
+
+{% block content %}
+<div class="col pt-3 pb-3 mb-3 mt-3">{{subfaction.name}}</div>
+<div class="row">
+
+<div class="col-10">{{subfaction.description}}
+</div>
+{% for npc in npcs %}
+<div class="col-2"><a href="{{path('npc',{'id':npc.id})}}">{{npc.name}}</a>
+</div>
+{% endfor %}
+</div>
+
+{% endblock %}

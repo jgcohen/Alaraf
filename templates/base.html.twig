@@ -61,16 +61,22 @@
 							</a>
 							<ul class="dropdown-menu" aria-labelledby="navbarDropdown">
 								<li>
-									<a class="dropdown-item" href="/tarocci">The Tarocci Crusade</a>
+									<a class="dropdown-item" href="{{path('faction',{'id':1})}}">The Tarocci Crusade</a>
 								</li>
 								<li>
-									<a class="dropdown-item" href="/baharit">The Five Countys of Baharit</a>
+									<a class="dropdown-item" href="{{path('faction',{'id':2})}}">Bishamon's Empire</a>
 								</li>
 								<li>
-									<a class="dropdown-item" href="/jormagund">The Jormagund Raiders</a>
+									<a class="dropdown-item" href="{{path('faction',{'id':4})}}">The Five Countys of Baharit</a>
 								</li>
 								<li>
-									<a class="dropdown-item" href="/eldritch">The Eldritch Lords Territories</a>
+									<a class="dropdown-item" href="{{path('faction',{'id':5})}}">The Jormagund Raiders</a>
+								</li>
+								<li>
+									<a class="dropdown-item" href="{{path('faction',{'id':3})}}">The Eldritch Lords Territories</a>
+								</li>
+								<li>
+									<a class="dropdown-item" href="/factions">All Factions</a>
 								</li>
 
 							</ul>
@@ -92,8 +98,13 @@
 							</ul>
 						</li>
 						<li class="nav-item ">
+							<a class="nav-link " href="/journal">Journal
+								<span class="sr-only"></span>
+							</a>
+						</li>
+						<li class="nav-item ">
 							<a class="nav-link " href="/world">Optionnal rules
-								<span class="sr-only">(current)</span>
+								<span class="sr-only"></span>
 							</a>
 						</li>
 						{# <li class="nav-item  ">

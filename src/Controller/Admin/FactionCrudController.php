@@ -21,6 +21,7 @@ class FactionCrudController extends AbstractCrudController
         return [
             TextField::new('name'),
             ImageField::new('image')->setBasePath('uploads/')->setUploadDir('public/uploads/')->setUploadedFileNamePattern('[randomhash].[extension]')->setRequired(false),
+            TextField::new('races'),
             TextareaField::new('description'),
         ];
     }

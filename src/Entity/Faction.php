@@ -44,6 +44,11 @@ class Faction
      */
     private $npcs;
 
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $races;
+
     public function __construct()
     {
         $this->subfactions = new ArrayCollection();
@@ -152,6 +157,18 @@ class Faction
                 $npc->setFaction(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getRaces(): ?string
+    {
+        return $this->races;
+    }
+
+    public function setRaces(?string $races): self
+    {
+        $this->races = $races;
 
         return $this;
     }

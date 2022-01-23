@@ -4,6 +4,7 @@ namespace App\Controller\Admin;
 
 use App\Entity\Faction;
 use App\Entity\Npc;
+use App\Entity\Post;
 use App\Entity\Subfaction;
 use App\Entity\User;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Dashboard;
@@ -35,5 +36,6 @@ class DashboardController extends AbstractDashboardController
         yield MenuItem::linkToCrud('Factions', 'fas fa-user', Faction::class);
         yield MenuItem::linkToCrud('SubFactions', 'fas fa-user', Subfaction::class);
         yield MenuItem::linkToCrud('Npcs', 'fas fa-user', Npc::class);
+        yield MenuItem::linkToCrud('Posts', 'fas fa-user', Post::class);
     }
 }

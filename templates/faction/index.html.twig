@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello FactionController!
+{% endblock %}
+
+{% block content %}
+{% if faction.image %}
+		<div class="col-md-5 ">
+			<img src="/uploads/{{faction.image}}" alt="{{faction.image}}" class="img-fluid">
+
+		</div>
+	{% endif %}
+	<h2 class="col pt-3 pb-3 mb-3 mt-3">{{faction.name}}</h2>
+	{% if faction.races %}
+		<div class="col-10 pb-3">{{faction.races}}</div>
+	{% endif %}
+
+
+	<div class="row">
+		<div class="col-10">{{faction.description}}
+		</div>
+		{% for subfaction in subfactions %}
+			<div class="col-2">
+				<a href="{{path('subfaction',{'id':subfaction.id})}}">{{subfaction.name}}</a>
+			</div>
+		{% endfor %}
+	</div>
+
+{% endblock %}
