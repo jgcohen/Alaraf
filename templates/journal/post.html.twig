@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello Journal
+{% endblock %}
+
+{% block content %}
+
+	<h1 class="mt-5 pt-2">{{post.title}}</h1>
+	
+		<div class="card my-3">
+			<div class="card-body">
+				<blockquote class="blockquote mb-0">
+					<p>{{post.content}}</p>
+					<div class="border-top p-2 d-flex justify-content-center">
+							<button type="button" class="btn btn-info text-white" data-bs-toggle="modal" data-bs-target="#exampleModal">Comment</button>
+							<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+								<div class="modal-dialog">
+									<div class="modal-content">
+										<div class="modal-header">
+											<h4 class="modal-title" id="exampleModalLabel">New Comment</h4>
+											<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+										</div>
+										<div class="modal-body">
+											{{form(form)}}
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+				</blockquote>
+                {% for comment in comments %}
+                    {{comment.content}}
+                 {% endfor %}
+			</div>
+		</div>
+
+{% endblock %}
