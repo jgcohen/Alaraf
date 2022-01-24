@@ -29,7 +29,17 @@
 						</div>
 				</blockquote>
                 {% for comment in comments %}
-                    {{comment.content}}
+				<div class="card my-3">
+					<div class="card-header">
+						{{comment.getUser()}}
+						<p>{{comment.getCreatedAt()|date('d/m/Y')}}</p>
+					</div>
+					<div class="card-body">
+						<blockquote class="blockquote mb-0">
+							<p>{{comment.content}}</p>
+						</blockquote>
+					</div>
+				</div>
                  {% endfor %}
 			</div>
 		</div>

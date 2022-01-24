@@ -63,6 +63,10 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
         $this->comments = new ArrayCollection();
         $this->posts = new ArrayCollection();
     }
+    public function __toString()
+    {
+        return $this->getFirstname();
+    }
 
     public function getId(): ?int
     {
