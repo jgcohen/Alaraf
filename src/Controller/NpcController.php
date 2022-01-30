@@ -13,6 +13,19 @@ class NpcController extends AbstractController
     public function __construct (EntityManagerInterface $entityManager){
         $this->entityManager = $entityManager;
     }
+
+
+    /**
+     * @Route("/npcs", name="npcs")
+     */
+    public function list(): Response
+    {
+        $npcs = $this->entityManager->getRepository(Npc::class)->findAll();
+        return $this->render('npc/list.html.twig', [
+            'npcs'=>$npcs
+        ]);
+    }
+
     /**
      * @Route("/npc/{id}", name="npc")
      */

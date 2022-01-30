@@ -25,9 +25,11 @@ class FactionController extends AbstractController
 
         $faction = $this->entityManager->getRepository(Faction::class)->find($id);
         $subfactions = $faction->getSubfactions();
+        $npcs = $faction->getNpcs();
         return $this->render('faction/index.html.twig', [
             'faction' => $faction,
-            'subfactions'=>$subfactions
+            'subfactions'=>$subfactions,
+            'npcs'=>$npcs
         ]);
     }
 }

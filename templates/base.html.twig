@@ -61,7 +61,7 @@
 							</a>
 							<ul class="dropdown-menu" aria-labelledby="navbarDropdown">
 								<li>
-									<a class="dropdown-item" href="{{path('faction',{'id':1})}}">The Tarocci Crusade</a>
+									<a class="dropdown-item" href="{{path('faction',{'id':1})}}">The Tarocchi Crusade</a>
 								</li>
 								<li>
 									<a class="dropdown-item" href="{{path('faction',{'id':2})}}">Bishamon's Empire</a>
@@ -103,7 +103,12 @@
 							</a>
 						</li>
 						<li class="nav-item ">
-							<a class="nav-link " href="/world">Optionnal rules
+							<a class="nav-link " href="/npcs"> Alarafians
+								<span class="sr-only"></span>
+							</a>
+						</li>
+						<li class="nav-item ">
+							<a class="nav-link " href="/world">Optional rules
 								<span class="sr-only"></span>
 							</a>
 						</li>
@@ -132,9 +137,9 @@
 							<span class="sr-only">(current)</span>
 						</a>
 
-						<a class="nav-link" href="/register">Register
+						{# <a class="nav-link" href="/register">Register
 							<span class="sr-only">(current)</span>
-						</a>
+						</a> #}
 					{% endif %}
 
 				</div>
@@ -144,9 +149,10 @@
 
 		<main role="main">
 			<div class="container mt-5">
-				<div class="container-fluid mt-5"> {% block content
+				{# <div class="container-fluid mt-5">  #}
+				{% block content
 			%}{% endblock %}
-					</div>
+					{# </div> #}
 				</div>
 
 

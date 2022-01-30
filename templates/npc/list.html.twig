@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Alaraf-All Npcs
+{% endblock %}
+
+{% block content %}
+<div class="my-5 text-center align-middle ">
+<div class="row pt-3 pb-3 mb-3 mt-3">
+		<div class="col-3 font-weight-bold ">Name
+		</div>
+		<div class="col-3 font-weight-bold">Race</div>
+		<div class="col-6 font-weight-bold">Description</div>
+	</div>
+{% for npc in npcs %}
+	<div class="row pt-3 pb-3 mb-3 mt-3">
+		<div class="col-3 ">{{npc.name}}
+			{% if npc.lastname %}
+				{{npc.lastname}}
+			{% endif %}
+		</div>
+		<div class="col-3 ">{{npc.race}}</div>
+		
+		<div class="col-6 ">{{npc.description}}</div>
+	</div>
+    {% endfor %}
+</div>
+{% endblock %}

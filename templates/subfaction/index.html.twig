@@ -1,17 +1,36 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello SubfactionController!{% endblock %}
+{% block title %}Alaraf-{{subfaction.name}}
+{% endblock %}
 
 {% block content %}
-<div class="col pt-3 pb-3 mb-3 mt-3">{{subfaction.name}}</div>
-<div class="row">
+	<h3 class="col-2 pt-3 pb-3 mb-3 mt-3">{{subfaction.name}}</h3>
+	<div class="row">
+		{% if subfaction.image %}
+			<div class="col-md-4 col-12 ">
+				<a href="/uploads/{{subfaction.image}}" target="_blank"><img src="/uploads/{{subfaction.image}}" alt="{{subfaction.image}}" class="img-fluid"></a>
 
-<div class="col-10">{{subfaction.description}}
-</div>
-{% for npc in npcs %}
-<div class="col-2"><a href="{{path('npc',{'id':npc.id})}}">{{npc.name}}</a>
-</div>
-{% endfor %}
-</div>
+			</div>
+		{% endif %}
+
+		<div class="col-md-5 col-7">{{subfaction.description}}
+		</div>
+		{% if subfaction.npcs %}
+			<div class="col-md-3 col-5">
+			<div class="row">
+					<p class="font-weight-bold"> Members:</p>
+				</div>
+				{% for npc in npcs %}
+					<div class="row">
+						<a href="{{path('npc',{'id':npc.id})}}">{{npc.name}}
+							{% if npc.lastname %}
+								{{npc.lastname}}
+							{% endif %}
+						</a>
+					</div>
+				{% endfor %}
+			</div>
+		{% endif %}
+	</div>
 
 {% endblock %}
